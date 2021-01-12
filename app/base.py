@@ -1,7 +1,7 @@
 from flask import Flask, render_template, url_for
 import requests
 
-app = Flask(__name__, template_folder='templates', static_folder='static')
+app = Flask(__name__, template_folder='views/templates', static_folder='views/static')
 
 
 @app.route('/')
