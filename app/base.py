@@ -13,27 +13,6 @@ app.config['SQLALCHEMY_DATABASE_URI'] = database_file
 db = SQLAlchemy(app)
 
 
-class Photos(db.Model):
-    photo_id = db.Column(db.Integer, unique=True, primary_key=True, nullable=False)
-    photo_name = db.Column(db.String(255), nullable=False)
-    photo_date = db.Column(db.DateTime)
-
-    def __repr__(self):
-        return "<Title: {}>".format(self.title)
-
-
-class User(db.Model):
-    user_id = db.Column(db.Integer, unique=True, primary_key=True, nullable=False)
-    name = db.Column(db.String(100), nullable=False)
-    email_address = db.Column(db.String(100), nullable=False)
-
-
-class UserPhotoSwipes(db.Model):
-    photo_id = db.Column(db.Integer, unique=True, primary_key=True, nullable=False)
-    user_id = db.Column(db.Integer, unique=True, primary_key=True, nullable=False)
-    user_selection = db.Column(db.Boolean)
-
-
 @app.route('/')
 def index():
     return render_template('index.html')
