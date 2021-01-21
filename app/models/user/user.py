@@ -6,5 +6,8 @@ class User(db.Model):
     name = db.Column(db.String(100), nullable=False)
     email_address = db.Column(db.String(100), nullable=False)
 
-    def get_user(user_id):
+    def get_user(self, user_id):
         return user_id
+
+    def create_user(self, name, email_address):
+        i = db.insert
